@@ -1,0 +1,18 @@
+#ALIASES
+alias l="ls -halF"
+alias c='clear'
+alias otw='open -a TextWrangler'
+alias vim='/Applications/mvim'
+alias mysql=/usr/local/mysql/bin/mysql
+alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+#alias eclipse=${ECLIPSE_HOME}/Eclipse.app
+alias eclipse=/Applications/eclipse/Eclipse.app/Contents/MacOS/eclipse
+#alias firefox=/Applications/Firefox3.app/Contents/MacOS/firefox
+#alias ffdev='/Applications/Firefox3.app/Contents/MacOS/firefox-bin -no-remote -P dev &'
+alias firefox=/Applications/Firefox.app/Contents/MacOS/firefox
+alias ffdev='/Applications/Firefox.app/Contents/MacOS/firefox-bin -no-remote -P dev &'
+alias ffman='/Applications/Firefox.app/Contents/MacOS/firefox-bin --profilemanager'
+alias xcode=/Developer/Applications/Xcode.app/Contents/MacOS/Xcode
+alias clj='rlwrap java -cp clojure-1.0.0.jar clojure.lang.Repl'
+alias dict='/Applications/Dictionary.app/Contents/MacOS/Dictionary'
+alias gitx='/Applications/GitX.app/Contents/MacOS/GitX'
