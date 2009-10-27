@@ -1,0 +1,8 @@
+git init
+git add .
+git commit -m "first commit"
+get remote add origin git@github.com:roblevintennis/my-configs.git
+git remote add origin git@github.com:roblevintennis/my-configs.git
+git push origin master
+git status
+
