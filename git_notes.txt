@@ -1,3 +1,39 @@
+------ Setup -------
+git init
+git config user.name "er_rob"
+git config user.email "eventreg.project@gmail.com"
+git config --list
+git config color.status=auto
+git config color.status=auto
+git config --list
+cat ~/.gitconfig 
+vim .gitignore &
+touch log/.gitignore
+touch tmp/.gitignore
+  
+------ Unfuddle (initial push) -------
+git remote add unfuddle git@eventreg.unfuddle.com:eventreg/eventreg.git
+git config remote.unfuddle.push refs/heads/master:refs/heads/master
+git add .
+git commit -m "Added initial Event Registration application"
+git commit -am "Second initial commit. For a switch first time"
+git push unfuddle master
+git remote
+git status
+git branch -a
+
+------- Now I've set it up so I can just do git push||pull:
+git commit -a -m "Got rid of the Is Default Checked"
+git push
+git commit -a -m "Fixed min/max length (min was repeated twice), also changed valid range to from 20..500"
+git push
+git status
+git log
+git diff 1b9a147831a3f55613547a9ca7acce1dedc70b2c
+
+
+------- my-config setup -------
+
 git init
 git add .
 git commit -m "first commit"
