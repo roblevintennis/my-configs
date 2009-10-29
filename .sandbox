@@ -1,7 +1,17 @@
 This is my sandbox
 HELLO AGAIN.
-Yet some more
-OMG, UTTER bullshit is so cool!
-one
+
+Woopdi doopdi
+
+hazzy jazzy phassi poo
+// OMG, UTTER bullshit is so cool!
+def one
+    puts 'this is one'
+end
 three
-two
+var two = function() { return 'this is a javascript func...'; };
+public String getJavaFunc(String s, int i) { return "I remember Java! Yoohoo!"; }
+(id) objC:(String ----- oh shit, I forgot Objective C syntax. That sucks!
+Hello
+Goodbye
+# Ok, I'm done
