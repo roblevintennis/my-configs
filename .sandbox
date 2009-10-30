@@ -1,17 +1,20 @@
 This is my sandbox
-HELLO AGAIN.
+I did this at Starbucks!
+HELLO AGAIN. Added this from Starbucks. Added some more
+// Yet some more
+OMG, UTTER bullshit is so cool!
 
-Woopdi doopdi
-
-hazzy jazzy phassi poo
-// OMG, UTTER bullshit is so cool!
-def one
-    puts 'this is one'
+Deleted 'one' and replaced from Starbucks
+def function a ruby_func 
+    puts 'a func three....'
 end
-three
-var two = function() { return 'this is a javascript func...'; };
-public String getJavaFunc(String s, int i) { return "I remember Java! Yoohoo!"; }
-(id) objC:(String ----- oh shit, I forgot Objective C syntax. That sucks!
-Hello
-Goodbye
-# Ok, I'm done
+four
+adding some more starbucks branch
+giborish (is that how you spell it?)
+    Bla bla bla
+var js_func = function() { return 'js is cool!'; };
+public String javaFunc(String s, int i) { return "Hey, I remember Java!!! Woohoo!"; }
+(id)isThisObjectiveC...damn, I forget!!!
+
+Ok, this is enough I guess.
+woopdi doo
