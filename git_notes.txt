@@ -17,7 +17,6 @@ git config remote.unfuddle.push refs/heads/master:refs/heads/master
 git add .
 git commit -m "Added initial Event Registration application"
 git commit -am "Second initial commit. For a switch first time"
-git push unfuddle master
 git remote
 git status
 git branch -a
@@ -42,3 +41,29 @@ git remote add origin git@github.com:roblevintennis/my-configs.git
 git push origin master
 git status
 
+ 
+  git log --stat
+  git rev-list master
+  git rev-list origin
+  git branch -a
+  git rev-list remotes/origin/master
+  git log --shortstat
+  git commit -a -m "Silly change"
+  git log --raw .sandbox 
+  git log --numstat
+  echo 'one' >>.sandbox 
+  echo 'two' >>.sandbox 
+  echo 'three' >>.sandbox 
+  git commit -a -m "testing adding three lines"
+  git log --stat
+  git rev-list master
+  git diff c71d120ac648e4efa565a4c6e389cc7d64a09d3c..46e5061f3e5128abaa443a4cc6a4fe39a7e89363
+  git diff c71d120ac648e4efa565a4c6e389cc7d64a09d3c..d58593bf14bf1c0b34d533cf996a2eb2f19aec58 --stat
+  git diff master..starbucks_branch --stat
+  git diff master..starbucks_branch 
+  git diff master..starbucks_branch > test.patch
+  patch -p1 < ./test.patch 
+  optional??? git reset HEAD tmp/temp.file.txt
+  git commit -a -m "commiting after merging starbucks_branch (well patching)"
+  git status
+  git push origin master
