@@ -3,9 +3,9 @@ Download
 
 RSpec-Cucumber Setup -- November 4, 2009
 
-<http://wiki.github.com/dchelimsky/rspec/code-for-the-rspec-book-beta>
-<http://wiki.github.com/aslakhellesoy/cucumber/setting-up-selenium>
-<http://seleniumhq.org/download/>
+<http://wiki.github.com/dchelimsky/rspec/code-for-the-rspec-book-beta><br />
+<http://wiki.github.com/aslakhellesoy/cucumber/setting-up-selenium><br />
+<http://seleniumhq.org/download/><br />
 
 
 Introduction
