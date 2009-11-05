@@ -20,7 +20,7 @@ Creating a default Cucumber project is easy:
     http://github.com/technicalpickles/jeweler
     sudo gem install jeweler
     git config --global github.user roblevintennis
-    jeweler --cucumber --rspec rspec_book
+    jeweler --cucumber --rspec name_of_project
 
 This will create a boiler plate cucumber/gem document structure.
 
