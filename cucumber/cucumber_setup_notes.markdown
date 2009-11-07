@@ -189,13 +189,18 @@ We run our *cucumber features/* and get a pass! It looks like this:
 <img src="/roblevintennis/my-configs/raw/master/cucumber/google_webrat_mechanize_google_pass_5.png" />
 
 So there's Cucumber working in tangent with Webrat and mechanize to scrape Google! Again, thanks to James who posted what we've paraphrased here: <http://blog.jcoglan.com/2009/10/03/getting-started-with-cucumber-rspec-webrat-and-multiruby/>
+Also found another code example here (but did not try it as we got this one working):<http://github.com/cayblood/cucumber-webrat-mechanize-example>
 
+mechanize
+---------
+
+_Being curious about mechanize, we put an example script from: <http://mechanize.rubyforge.org/mechanize/GUIDE_rdoc.html> in the /cucumber/mechanize_test directory._
 
 ------------
 Jeweler
 ------------
 
-__UPDATE!! ----- I just decided to create my own template instead__
+__UPDATE!! ----- I just decided to create my own template instead -- but this does work to create a directory structure for cucumber/gems. It was more than what I needed to just understand cucumber/webrat.__
 
 Setting up a default project you can use: ** Jeweler ** to create a cucumber project:
 
