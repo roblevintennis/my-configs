@@ -61,20 +61,7 @@ Use the /template directory as a starting point then run:
 
 Mimicking the (Hellesoy) Adder example
 ------------
-Now that I had the template, I basically renamed everything (file names and text IN the files from template to adder. Then I updated my adder.feature to look like:
-
-    Feature:
-    In order to Add
-    As a complete imbecile 
-    I want to see the sum of two numbers 
-
-    Scenario: Add two numbers 
-	Given I enter 20 in to the adder
-	And I enter 30 in to the adder
-	When I press add 
-	Then the result should be 50 on the screen
-
-You can see in the following output as I've stacked the test and the output respectively:
+Now that I had the template, I basically renamed everything (file names and text IN the files from template to adder. Then I updated my adder.feature as you can see in the following output as I've stacked the test and the ouput after running 'cucumber features' respectively:
 
 <img src="/roblevintennis/my-configs/raw/master/cucumber/adder_1_no_pass.png" />
  
