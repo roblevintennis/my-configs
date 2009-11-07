@@ -1,4 +1,4 @@
-Feature:
+Feature: Addition
     In order to Add
     As a complete imbecile 
     I want to see the sum of two numbers 

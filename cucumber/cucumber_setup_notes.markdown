@@ -77,8 +77,15 @@ But there is no Adder object! In fact, if we somehow don't know what's wrong int
 
 <img src="/roblevintennis/my-configs/raw/master/cucumber/adder_4_2_passing.png" />
 
-Woohoo! We have half our scenario passing: _4 steps (2 undefined, 2 passed)_
+Woohoo! We have half our scenario passing: _4 steps (2 undefined, 2 passed)_ But there's a problem next when we try to work on the When step because our Adder object has went out of scope so we can't tell it to add the two operands we've "pushed". We need an object that will "stick around" between the Given|When|Then, so we use a typical TDD hook 'Before' and get the next pass"
 
+<img src="/roblevintennis/my-configs/raw/master/cucumber/adder_5_before_hook.png" />
+
+And finally we add our 'Then' step definition and simply make sure that our results match up:
+
+<img src="/roblevintennis/my-configs/raw/master/cucumber/adder_6_pass.png" />
+
+And we've methodically finished a Scenario for the Addition feature!
 
 
 
