@@ -196,6 +196,10 @@ mechanize
 
 _Being curious about mechanize, we put an example script from: <http://mechanize.rubyforge.org/mechanize/GUIDE_rdoc.html> in the /cucumber/mechanize_test directory._
 
+Cucumber/Webrat with Rails 
+--------------------------
+To be completed...
+
 ------------
 Jeweler
 ------------
