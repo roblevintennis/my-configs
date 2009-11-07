@@ -74,17 +74,10 @@ Now that I had the template, I basically renamed everything (file names and text
 	When I press add 
 	Then the result should be 50 on the screen
 
-And got the following output:
-![First Run - No Pass](http://github.com/roblevintennis/my-configs/blob/master/cucumber/adder_1_no_pass.png "Running cucumber features/ - No Pass")
-
-![Alt text](adder_1_no_pass.png)
-
-<img src="http://github.com/roblevintennis/my-configs/blob/master/cucumber/adder_1_no_pass.png">
+You can see in the following output as I've stacked the test and the output respectively:
 
 <img src="/roblevintennis/my-configs/raw/master/cucumber/adder_1_no_pass.png" />
  
-<img src="cucumber/adder_1_no_pass.png" />
-
 ------------
 Jeweler
 ------------
