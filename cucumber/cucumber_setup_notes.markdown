@@ -79,7 +79,7 @@ And got the following output:
 
 ![Alt text](adder_1_no_pass.png)
 
-<img src="http://github.com/roblevintennis/my-configs/blob/master/cucumber/adder_1_no_pass.png" />
+<img src="http://github.com/roblevintennis/my-configs/blob/master/cucumber/adder_1_no_pass.png">
 
 <img src="adder_1_no_pass.png" />
  
