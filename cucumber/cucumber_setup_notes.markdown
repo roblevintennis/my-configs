@@ -65,6 +65,34 @@ Now that I had the template, I basically renamed everything (file names and text
 
 <img src="/roblevintennis/my-configs/raw/master/cucumber/adder_1_no_pass.png" />
  
+Given that the output gives some suggestions on what we can use for our step definition for the 'Given' we cut and past but change the definition to use a block and then we run our cucumber features again:
+
+<img src="/roblevintennis/my-configs/raw/master/cucumber/adder_2_first_step_def.png" />
+
+The first is yellow indicating the that step is still pending; the blue steps show that cucumber has essentialy skipped these. So we need to create our Adder object and push each operand:
+
+<img src="/roblevintennis/my-configs/raw/master/cucumber/adder_3_no_Adder.png" />
+
+But there is no Adder object! In fact, if we somehow don't know what's wrong intuitively, Cucumber tells us: see the line in red that says: 'uninitialized constant Adder (NameError)' -- this is basically Cucumber telling us what to do next 'Go create an Adder!'. So we implement the Adder class (note that we already have the ruby file in /lib/adder.rb but it's empty so we do:
+
+<img src="/roblevintennis/my-configs/raw/master/cucumber/adder_4_2_passing.png" />
+
+Woohoo! We have half our scenario passing: _4 steps (2 undefined, 2 passed)_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ------------
 Jeweler
 ------------
