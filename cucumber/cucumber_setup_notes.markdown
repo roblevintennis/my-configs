@@ -8,20 +8,21 @@ RSpec-Cucumber Setup -- November 4, 2009
 <http://seleniumhq.org/download/><br />
 
 
-Introduction
+Running the Cucumber Template
 ------------
 Use the /template directory as a starting point then run:
-    cucumber features/
+    
+    $ cucumber features/
 
-    Feature:
-	In order to understand Cucumber
-	As a frustrated programmer
-	I want to get the damn test to pass
+      Feature:
+        In order to understand Cucumber
+        As a frustrated programmer
+        I want to get the damn test to pass
 
       Scenario: Pass already                 # features/template.feature:6
-	Given I think I know what I am doing # features/template.feature:7
-	When I run this test                 # features/template.feature:8
-	Then it will pass                    # features/template.feature:9
+        Given I think I know what I am doing # features/template.feature:7
+        When I run this test                 # features/template.feature:8
+        Then it will pass                    # features/template.feature:9
 
     1 scenario (1 undefined)
     3 steps (3 undefined)

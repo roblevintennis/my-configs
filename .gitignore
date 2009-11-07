@@ -1,0 +1,13 @@
+log/*.log
+tmp/**/*
+doc/api
+doc/app
+*.swp
+*~
+.DS_Store
+test.html
+test.xml
+irb.txt
+git_notes.txt
+unfuddle.png
+
