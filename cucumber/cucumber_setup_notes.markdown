@@ -22,7 +22,21 @@ I basically went down the list doing:
 
     sudo gem install WHATEVER
 
-and sometimes had to use the error messages to install other dependent gems (i.e. cucumber needed treetop, etc.).
+and sometimes had to use the error messages to install other dependent gems (i.e. cucumber needed treetop, nokogiri, etc.).
+<http://nokogiri.org/>
+<http://treetop.rubyforge.org/>
+ 
+I think for Ubuntu you may also need to get some other dependencies like:
+    $ sudo aptitude install libxslt1-dev libxml2-dev
+
+Cucumber Colors 
+---------------
+I used Aslak's highlight scheme from:
+<http://wiki.github.com/aslakhellesoy/cucumber/console-colours><br />
+
+'Aslak likes to highlight all parameters in magenta, so he uses this...'
+    export CUCUMBER_COLORS=pending_param=magenta:failed_param=magenta:passed_param=magenta:skipped_param=magenta
+
 
 Running the Cucumber Template
 ------------
@@ -59,7 +73,7 @@ Use the /template directory as a starting point then run:
     end
     
 
-Mimicking the (Hellesoy) Adder example
+Mimicking the (Hellesoy) Adder example (step by step!)
 ------------
 Now that I had the template, I basically renamed everything (file names and text IN the files from template to adder. Then I updated my adder.feature as you can see in the following output as I've stacked the test and the ouput after running 'cucumber features' respectively:
 
@@ -88,8 +102,18 @@ And finally we add our 'Then' step definition and simply make sure that our resu
 And we've methodically finished a Scenario for the Addition feature!
 
 
+Explicitly Getting Webrat in the Mix
+------------------------------------
+Referenced: <http://blog.jcoglan.com/2009/10/03/getting-started-with-cucumber-rspec-webrat-and-multiruby/>
 
+_Just want to actually use Webrat to do something like 'visit' such and such url, etc._
 
+First I copied over my template like so (and then rename as usual filenames and anything 'template' to 'google':
+cp -r template/ google
+*You on your own for renaming files and pointing everything to 'google' instead of 'template' -- I suggest you just cheat and copy the /google stuff instead ;-)*
+
+I essentially set up the following feature and get the following output when I run: *cucumber feature/* for the google/ directory:
+<img src="/roblevintennis/my-configs/raw/master/cucumber/google_webrat_1.png" />
 
 
 

@@ -10,5 +10,4 @@ class Adder
 	end
 	@sum
     end
-
 end
