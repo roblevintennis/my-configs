@@ -1,0 +1,5 @@
+# Logfile created on Sat Nov 07 14:26:07 -0800 2009 by /
+D, [2009-11-07T14:26:07.125047 #5049] DEBUG -- : REQUESTING PAGE: GET http://www.google.com/ with {} and HTTP headers {}
+D, [2009-11-07T14:27:33.825251 #5055] DEBUG -- : REQUESTING PAGE: GET http://www.google.com/ with {} and HTTP headers {}
+D, [2009-11-07T14:38:01.037370 #5077] DEBUG -- : REQUESTING PAGE: GET http://www.google.com/ with {} and HTTP headers {}
+D, [2009-11-07T14:38:01.146005 #5077] DEBUG -- : REQUESTING PAGE: GET /search with {"btnG"=>"Google Search", "hl"=>"en", "q"=>"World Wide Web Consortium", "ie"=>"ISO-8859-1", "source"=>"hp"} and HTTP headers {"HTTP_REFERER"=>"http://www.google.com/"}

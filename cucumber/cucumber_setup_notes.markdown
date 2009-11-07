@@ -10,13 +10,14 @@ I used the following guides:
 <http://seleniumhq.org/download/><br />
 
 And basically had this configuration when I was done:
-* rspec-1.2.9.rc1
-* rspec-rails-1.2.9.rc1
-* cucumber-0.3.11
-* webrat-0.6.rc1
-* rails-2.3.4
-* Selenium-1.1.14
-* selenium-client-1.2.16
+*   rspec-1.2.9.rc1
+*   rspec-rails-1.2.9.rc1
+*   cucumber-0.3.11
+*   webrat-0.6.rc1
+*   rails-2.3.4
+*   Selenium-1.1.14
+*   selenium-client-1.2.16
+*   mechanize-0.9.3
 
 I basically went down the list doing:
 
@@ -34,7 +35,7 @@ Cucumber Colors
 I used Aslak's highlight scheme from:
 <http://wiki.github.com/aslakhellesoy/cucumber/console-colours><br />
 
-'Aslak likes to highlight all parameters in magenta, so he uses this...'
+'Aslak likes to highlight all parameters in magenta, so he uses this...' so I put this in my ~/.bash_profile:
     export CUCUMBER_COLORS=pending_param=magenta:failed_param=magenta:passed_param=magenta:skipped_param=magenta
 
 
@@ -110,18 +111,65 @@ _Just want to actually use Webrat to do something like 'visit' such and such url
 
 First I copied over my template like so (and then rename as usual filenames and anything 'template' to 'google':
 cp -r template/ google
-*You on your own for renaming files and pointing everything to 'google' instead of 'template' -- I suggest you just cheat and copy the /google stuff instead ;-)*
+*You on your own for renaming files and pointing everything to 'google' instead of 'template' -- I suggest you just cheat and copy my /cucumber/google stuff instead ;-)*
 
 I essentially set up the following feature and get the following output when I run: *cucumber feature/* for the google/ directory:
 <img src="/roblevintennis/my-configs/raw/master/cucumber/google_webrat_1.png" />
+*above screen shot cut off the Feature in my Vim, but you see it in the output anyway ;-)*
 
+So Cucumber gives us the customary iniital suggestions for our spec defs saying: *You can implement step definitions for undefined steps with these snippets:*
+So we take the:
+    Given /^I have opened "([^\"]*)"$/ do |arg1|
+        pending
+    end
+*and modify it to:*
+    Given /^I have opened "([^\"]*)"$/ do |url|
+        visit url
+    end
+in our features/step_definitions/google_steps.rb file and get the following error:
 
+<img src="/roblevintennis/my-configs/raw/master/cucumber/google_webrat_error_2.png" />
+We apparently don't have a webrat handle so we have to include it? Also, googling around tells us that we can only test local web sites (i.e. a local rails app, etc.) with webrat - but with mechanize we *can* scrape outside sites:
+    sudo gem install mechanize
 
+And since I can't possibly think of a better way to put it, this is what we need to know about mechanize:
+**The first step will be marked yellow to indicate that it’s pending, and the remaining steps will be blue to show they’ve been skipped. Let’s try to turn the first step green. In step_definitions/search_steps.rb, change the first definition to the following:
 
+    Given /^I have opened "([^\"]*)"$/ do |url|
+        visit url
+    end
 
+visit is a method provided by Webrat for getting web pages. We need to tell Cucumber to load Webrat and include its methods in the testing environment, which we do by putting this in support/env.rb:
 
+    require 'webrat'
 
+    Webrat.configure do |config|
+        config.mode = :mechanize
+    end
 
+    World(Webrat::Methods)
+    World(Webrat::Matchers)
+
+Webrat doesn’t actually make requests itself, it provides adapters to other systems such as Rails and Sinatra for calling their web stacks with a uniform API. We just want to query the web, so we’re using telling Webrat to use Mechanize to fetch pages. We then mix two modules into the Cucumber World, the context that all your steps run in. Webrat::Methods provides methods like visit and click_button for navigating the web, and Webrat::Matchers provides things like have_selector and contains for use with RSpec’s should interface.
+**
+
+So after adding the above stuff we run our *cucumber features/* and get a boatload of output including some complaints that we're running an old buggy version of libxml2, and a nokigiri parenthesize warning...we choose to ignore both for now. The important part is that we've actually opened google.com!
+
+<img src="/roblevintennis/my-configs/raw/master/cucumber/google_webrat_mechanize_google_opened_3.png" />
+
+So this is our first sign of success -- now we want to actually fill in Google's all so powerful textfield and have our search term do the search. Using the Firebug Inspector, we click on the textfield and see:
+<input value="" title="Google Search" class="lst" size="55" name="**q**" maxlength="2048" autocomplete="off"/>
+Conveniently, webrat has a 'fill_in' which will allow us to enter the search term into Google's 'q' text field:
+
+    When /^I search for "([^\"]*)"$/ do |term|
+        fill_in "q", :with => term
+        click_button "Google Search"
+    end
+
+We run cucumber again and, amongst other things, see:
+<img src="/roblevintennis/my-configs/raw/master/cucumber/google_webrat_mechanize_google_search_4.png" />
+
+2 passes!
 
 
 ------------
