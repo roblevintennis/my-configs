@@ -80,6 +80,9 @@ And got the following output:
 <img src="http://github.com/roblevintennis/my-configs/blob/master/cucumber/adder_1_no_pass.png" />
 
 <img src="adder_1_no_pass.png" />
+ 
+<img src="cucumber/adder_1_no_pass.png" />
+
 ------------
 Jeweler
 ------------
