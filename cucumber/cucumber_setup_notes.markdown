@@ -75,9 +75,9 @@ Now that I had the template, I basically renamed everything (file names and text
 	Then the result should be 50 on the screen
 
 And got the following output:
-![First Run - No Pass](./adder_1_no_pass.png "Running cucumber features/ - No Pass")
+![First Run - No Pass](http://github.com/roblevintennis/my-configs/blob/master/cucumber/adder_1_no_pass.png "Running cucumber features/ - No Pass")
 
-<img src="adder_1_no_pass.png" />
+<img src="http://github.com/roblevintennis/my-configs/blob/master/cucumber/adder_1_no_pass.png" />
 ------------
 Jeweler
 ------------
