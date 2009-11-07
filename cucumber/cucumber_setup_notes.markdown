@@ -103,7 +103,7 @@ And finally we add our 'Then' step definition and simply make sure that our resu
 And we've methodically finished a Scenario for the Addition feature!
 
 
-Explicitly Getting Webrat in the Mix
+Getting Webrat in the Mix (oh yeah, we need mechanize too!)
 ------------------------------------
 Referenced: <http://blog.jcoglan.com/2009/10/03/getting-started-with-cucumber-rspec-webrat-and-multiruby/>
 
@@ -132,7 +132,10 @@ in our features/step_definitions/google_steps.rb file and get the following erro
 We apparently don't have a webrat handle so we have to include it? Also, googling around tells us that we can only test local web sites (i.e. a local rails app, etc.) with webrat - but with mechanize we *can* scrape outside sites:
     sudo gem install mechanize
 
-And since I can't possibly think of a better way to put it, this is what we need to know about mechanize:
+mechanize
+---------
+
+And since I can't possibly think of a better way to put it, here's what James said in his blog about mechanize:
 **The first step will be marked yellow to indicate that it’s pending, and the remaining steps will be blue to show they’ve been skipped. Let’s try to turn the first step green. In step_definitions/search_steps.rb, change the first definition to the following:
 
     Given /^I have opened "([^\"]*)"$/ do |url|
@@ -178,7 +181,7 @@ Then /^I should see a link to "([^\"]*)" with text "([^\"]*)"$/ do |url, text|
 end
 
 We get a __huge__ red error with a dump of some of the html that got returned. Looking through it we notice in the anchor we were expecting:
-<a href="__http://www.w3.org/__" class="l"><em>World Wide Web Consortium</em>
+<a href="__http://www.w3.org/__" class="l"><em>World Wide Web Consortium</em></a>
 
 So we probably forgot the http:// part. 
 So we switch our google.feature's Then to read:
