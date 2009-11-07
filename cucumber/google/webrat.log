@@ -3,3 +3,7 @@ D, [2009-11-07T14:26:07.125047 #5049] DEBUG -- : REQUESTING PAGE: GET http://www
 D, [2009-11-07T14:27:33.825251 #5055] DEBUG -- : REQUESTING PAGE: GET http://www.google.com/ with {} and HTTP headers {}
 D, [2009-11-07T14:38:01.037370 #5077] DEBUG -- : REQUESTING PAGE: GET http://www.google.com/ with {} and HTTP headers {}
 D, [2009-11-07T14:38:01.146005 #5077] DEBUG -- : REQUESTING PAGE: GET /search with {"btnG"=>"Google Search", "hl"=>"en", "q"=>"World Wide Web Consortium", "ie"=>"ISO-8859-1", "source"=>"hp"} and HTTP headers {"HTTP_REFERER"=>"http://www.google.com/"}
+D, [2009-11-07T14:47:32.716506 #5188] DEBUG -- : REQUESTING PAGE: GET http://www.google.com/ with {} and HTTP headers {}
+D, [2009-11-07T14:47:32.804188 #5188] DEBUG -- : REQUESTING PAGE: GET /search with {"btnG"=>"Google Search", "hl"=>"en", "q"=>"World Wide Web Consortium", "ie"=>"ISO-8859-1", "source"=>"hp"} and HTTP headers {"HTTP_REFERER"=>"http://www.google.com/"}
+D, [2009-11-07T14:51:56.781483 #5202] DEBUG -- : REQUESTING PAGE: GET http://www.google.com/ with {} and HTTP headers {}
+D, [2009-11-07T14:51:56.951944 #5202] DEBUG -- : REQUESTING PAGE: GET /search with {"btnG"=>"Google Search", "hl"=>"en", "q"=>"World Wide Web Consortium", "ie"=>"ISO-8859-1", "source"=>"hp"} and HTTP headers {"HTTP_REFERER"=>"http://www.google.com/"}

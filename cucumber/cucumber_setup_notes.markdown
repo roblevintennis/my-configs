@@ -169,7 +169,26 @@ Conveniently, webrat has a 'fill_in' which will allow us to enter the search ter
 We run cucumber again and, amongst other things, see:
 <img src="/roblevintennis/my-configs/raw/master/cucumber/google_webrat_mechanize_google_search_4.png" />
 
-2 passes!
+2 passes! So we have to implement our last step definition:
+
+Then /^I should see a link to "([^\"]*)" with text "([^\"]*)"$/ do |url, text|
+  response_body.should have_selector("a[href='#{ url }']") do |element|
+    element.should contain(text)
+  end
+end
+
+We get a __huge__ red error with a dump of some of the html that got returned. Looking through it we notice in the anchor we were expecting:
+<a href="__http://www.w3.org/__" class="l"><em>World Wide Web Consortium</em>
+
+So we probably forgot the http:// part. 
+So we switch our google.feature's Then to read:
+    Then I should see a link to "http://www.w3.org/" with text "World Wide Web Consortium"
+
+We run our *cucumber features/* and get a pass! It looks like this:
+
+<img src="/roblevintennis/my-configs/raw/master/cucumber/google_webrat_mechanize_google_pass_5.png" />
+
+So there's Cucumber working in tangent with Webrat and mechanize to scrape Google! Again, thanks to James who posted what we've paraphrased here: <http://blog.jcoglan.com/2009/10/03/getting-started-with-cucumber-rspec-webrat-and-multiruby/>
 
 
 ------------
