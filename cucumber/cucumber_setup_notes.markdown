@@ -77,7 +77,7 @@ Now that I had the template, I basically renamed everything (file names and text
 And got the following output:
 ![First Run - No Pass](./adder_1_no_pass.png "Running cucumber features/ - No Pass")
 
-
+<img src="./adder_1_no_pass.png">
 ------------
 Jeweler
 ------------
