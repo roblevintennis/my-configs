@@ -23,8 +23,9 @@ I basically went down the list doing:
 
     sudo gem install WHATEVER
 
-and sometimes had to use the error messages to install other dependent gems (i.e. cucumber needed treetop, nokogiri, etc.).
-<http://nokogiri.org/>
+and sometimes had to use the error messages to install other dependent gems (i.e. cucumber needed treetop, nokogiri, etc., which you can also install as gems).<br />
+For more info on these:
+<http://nokogiri.org/><br .?
 <http://treetop.rubyforge.org/>
  
 I think for Ubuntu you may also need to get some other dependencies like:
@@ -197,7 +198,7 @@ Also found another code example here (but did not try it as we got this one work
 mechanize
 ---------
 
-_Being curious about mechanize, we put an example script from: <http://mechanize.rubyforge.org/mechanize/GUIDE_rdoc.html> in the /cucumber/mechanize_test directory._
+_Being curious about mechanize, we put an example script from: <http://mechanize.rubyforge.org/mechanize/GUIDE_rdoc.html> in the /cucumber/mechanize_test directory which you should be able to run with: ruby mechanize_test.rb (if you're in the mechanize_test/ directory of course)_
 
 Cucumber/Webrat with Rails 
 --------------------------
@@ -221,4 +222,5 @@ Creating a default Cucumber project is easy:
     jeweler --cucumber --rspec name_of_project
 
 This will create a boiler plate cucumber/gem document structure.
+
 
