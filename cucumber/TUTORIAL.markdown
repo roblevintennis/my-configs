@@ -202,15 +202,16 @@ _Being curious about mechanize, we put an example script from: <http://mechanize
 
 Cucumber/Webrat with Rails 
 --------------------------
-To be completed...
+IMO, it was good to use Cucumber outside of Rails, and sort of build on it layer by layer adding webrat, mechanize, etc. Now, we're probably ready to use it in Rails -- the best idea at this point is to head over to any and/or all of the following from Ryan Bates:
+<http://railscasts.com/episodes/155-beginning-with-cucumber>
+<http://asciicasts.com/episodes/155-beginning-with-cucumber>
+<http://github.com/ryanb/railscasts-episodes/tree/master/episode-155>
 
 ------------
 Jeweler
 ------------
 
-__UPDATE!! ----- I just decided to create my own template instead -- but this does work to create a directory structure for cucumber/gems. It was more than what I needed to just understand cucumber/webrat.__
-
-Setting up a default project you can use: ** Jeweler ** to create a cucumber project:
+This is a tools like gemcutter for creating your own gems and does some nice generator stuff. It also takes options for rpec and cucumber, so now that we now how to use those, we can get really fancy and make our own stuff:
 
 ### Using Jeweler to Create a Default Cucumber Project ###
 
