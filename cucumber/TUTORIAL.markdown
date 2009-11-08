@@ -202,7 +202,7 @@ _Being curious about mechanize, we put an example script from: <http://mechanize
 
 Cucumber/Webrat with Rails 
 --------------------------
-IMO, it was good to use Cucumber outside of Rails, and sort of build on it layer by layer adding webrat, mechanize, etc. Now, we're probably ready to use it in Rails -- the best idea at this point is to head over to any and/or all of the following from Ryan Bates:
+IMO, it was good to use Cucumber outside of Rails, and sort of build on it layer by layer adding webrat, mechanize, etc. Now, we're probably ready to use it in Rails -- the best idea at this point is to head over to any and/or all of the following from Ryan Bates:<br />
 <http://railscasts.com/episodes/155-beginning-with-cucumber><br />
 <http://asciicasts.com/episodes/155-beginning-with-cucumber><br />
 <http://github.com/ryanb/railscasts-episodes/tree/master/episode-155><br />
