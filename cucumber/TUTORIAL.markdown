@@ -223,9 +223,9 @@ IMO, it was good to use Cucumber outside of Rails, and sort of build on it layer
 <http://github.com/ryanb/railscasts-episodes/tree/master/episode-155><br />
 
 Also Ericy Berry made a tutorial here:<br />
-<http://vimeo.com/6563331> or maybe: <http://www.teachmetocode.com/screencasts/4> This was helpful in that it showed how you start at the cucumber abstraction level, and then drill down into the rspec unit tests, and then come back up to cucumber.
+<http://vimeo.com/6563331> or maybe: <http://www.teachmetocode.com/screencasts/4> This was helpful in that it showed how you start at the cucumber abstraction level, and then drill down into the rspec unit tests, and then come back up to cucumber. That being said, he (and I while I followed along) were using the system installed gems. This is fine, but I think RB's config.gem steps are a cleaner way to go.
 
-If you're a nut like me, you catalog your shell history ;-) 
+_If you're a nut like me, you catalog select parts of your shell history ;-)_
     rails cucumber-intro
     cd cucumber-intro/
     ./script/generate cucumber
