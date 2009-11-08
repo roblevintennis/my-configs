@@ -1,0 +1,132 @@
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "created_at") VALUES('Bob', '2009-11-08 21:23:00', '2009-11-08 21:23:00')[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "created_at") VALUES('Bob', '2009-11-08 21:23:47', '2009-11-08 21:23:47')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'Bob') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "updated_at", "created_at") VALUES('Bob', '2009-11-08 21:24:27', '2009-11-08 21:24:27')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = 'Bob') LIMIT 1[0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:44:09) [GET]
+Rendering users/index
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:44:10) [GET]
+Rendering users/index
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:48:14) [GET]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:48:14) [GET]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:49:06) [GET]
+Rendering users/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:49:06) [GET]
+Rendering users/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:51:09) [GET]
+Rendering users/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:51:09) [GET]
+Rendering users/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:51:09) [GET]
+Rendering users/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:52:30) [GET]
+Rendering users/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:52:30) [GET]
+Rendering users/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:52:30) [GET]
+Rendering users/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:52:30) [GET]
+Rendering users/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:57:34) [GET]
+Rendering users/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:57:34) [GET]
+Rendering users/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:57:34) [GET]
+Rendering users/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:57:34) [GET]
+Rendering users/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:58:58) [GET]
+Rendering users/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:58:58) [GET]
+Rendering users/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:58:58) [GET]
+Rendering users/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:58:58) [GET]
+Rendering users/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:59:15) [GET]
+Rendering users/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:59:15) [GET]
+Rendering users/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:59:15) [GET]
+Rendering users/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://test.host/users]
+
+
+Processing UsersController#index (for 0.0.0.0 at 2009-11-08 13:59:15) [GET]
+Rendering users/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://test.host/users]

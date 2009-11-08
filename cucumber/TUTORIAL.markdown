@@ -27,8 +27,17 @@ and sometimes had to use the error messages to install other dependent gems (i.e
 For more info on these:
 <http://nokogiri.org/><br .?
 <http://treetop.rubyforge.org/>
- 
-I think for Ubuntu you may also need to get some other dependencies like:
+
+
+__UPDATE__ For the error that libxml2 gives like *I_KNOW_I_AM_USING_AN_OLD_AND_BUGGY_VERSION_OF_LIBXML2 before requring nokogiri...* see the following but first try (requires macports):
+    sudo port install libxml2 libxslt 
+    sudo gem install nokogiri -- --with-xml2-include=/opt/local/include/libxml2 --with-xml2-lib=/opt/local/lib --with-xslt-dir=/opt/local
+
+*This essentially reinstalls the nokogiri after we've reinstalled updated libxml2* See more:
+<http://wiki.github.com/tenderlove/nokogiri/what-to-do-if-libxml2-is-being-a-jerk>
+
+__Ubuntu__
+I think for Ubuntu you may also need to get some other dependencies like (but I did mine on mac):
     $ sudo aptitude install libxslt1-dev libxml2-dev
 
 Cucumber Colors 
@@ -39,6 +48,12 @@ I used Aslak's highlight scheme from:
 'Aslak likes to highlight all parameters in magenta, so he uses this...' so I put this in my ~/.bash_profile:
     export CUCUMBER_COLORS=pending_param=magenta:failed_param=magenta:passed_param=magenta:skipped_param=magenta
 
+
+Introduction 
+------------
+The reason I wrote this is that I like to catalog these types of things for later reference, and also so someone else can have another place to reference. That being said, it's impossible to do it in perfect cookbook style so you may be on your on at times :-(
+
+It seems that the suggested ramp up route is to read the RSpec book and/or watch the Ryan Bates railscast. The github readme's are also helpful for webrat/rspec, etc. However, I found that starting as simply as possible (like what sort of directory structure do I need to create and should I use a generator or mkdir/touch???), was very helpful. I think a reader of this tut will save a LOT of time as I sort of plodded through it!
 
 Running the Cucumber Template
 ------------
@@ -206,6 +221,32 @@ IMO, it was good to use Cucumber outside of Rails, and sort of build on it layer
 <http://railscasts.com/episodes/155-beginning-with-cucumber><br />
 <http://asciicasts.com/episodes/155-beginning-with-cucumber><br />
 <http://github.com/ryanb/railscasts-episodes/tree/master/episode-155><br />
+
+Also Ericy Berry made a tutorial here:<br />
+<http://vimeo.com/6563331> or maybe: <http://www.teachmetocode.com/screencasts/4> This was helpful in that it showed how you start at the cucumber abstraction level, and then drill down into the rspec unit tests, and then come back up to cucumber.
+
+If you're a nut like me, you catalog your shell history ;-) 
+    rails cucumber-intro
+    cd cucumber-intro/
+    ./script/generate cucumber
+    ./script/generate rspec
+    rm -rf test
+    rake db:schema:dump
+    vim &
+    cucumber features/manage_users.feature 
+    script/generate rspec_model user name:string
+    rake db:migrate
+    rake db:test:clone
+    rake spec
+    spec spec/models/user_spec.rb 
+    cucumber features/manage_users.feature 
+    open .
+    ./script/generate rspec_controller users
+    spec spec/controllers/users_controller_spec.rb 
+    cucumber features/manage_users.feature 
+    sudo port install libxml2 libxslt 
+    sudo gem install nokogiri -- --with-xml2-include=/opt/local/include/libxml2 --with-xml2-lib=/opt/local/lib --with-xslt-dir=/opt/local  
+    cucumber features/manage_users.feature 
 
 ------------
 Jeweler
