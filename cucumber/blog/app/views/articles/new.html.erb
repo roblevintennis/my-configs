@@ -1,0 +1,15 @@
+<% form_for @article do |f| %>
+  <ol class="formList">
+    <li>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </li>
+    <li>
+      <%= f.label :content %>
+      <%= f.text_field :content %>
+    </li>
+    <li>
+      <%= f.submit "Create" %>
+    </li>
+  </ol>
+<% end %>

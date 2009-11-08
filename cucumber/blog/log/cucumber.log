@@ -1,0 +1,130 @@
+# Logfile created on Sat Nov 07 17:03:46 -0800 2009  [4;36;1mArticle Create (0.6ms)[0m   [0;1mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 01:11:11', 'Pizza', NULL, '2009-11-08 01:11:11')[0m
+  [4;35;1mArticle Create (0.1ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 01:11:11', 'Breadsticks', NULL, '2009-11-08 01:11:11')[0m
+  [4;36;1mArticle Create (0.5ms)[0m   [0;1mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 01:13:40', 'Pizza', NULL, '2009-11-08 01:13:40')[0m
+  [4;35;1mArticle Create (0.1ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 01:13:40', 'Breadsticks', NULL, '2009-11-08 01:13:40')[0m
+  [4;36;1mArticle Create (0.5ms)[0m   [0;1mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 01:14:43', 'Pizza', NULL, '2009-11-08 01:14:43')[0m
+  [4;35;1mArticle Create (0.1ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 01:14:43', 'Breadsticks', NULL, '2009-11-08 01:14:43')[0m
+REQUESTING PAGE: GET /articles with {} and HTTP headers {}
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-07 17:14:43) [GET]
+  [4;36;1mArticle Create (0.7ms)[0m   [0;1mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 01:15:19', 'Pizza', NULL, '2009-11-08 01:15:19')[0m
+  [4;35;1mArticle Create (0.1ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 01:15:19', 'Breadsticks', NULL, '2009-11-08 01:15:19')[0m
+REQUESTING PAGE: GET /articles with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-07 17:15:19) [GET]
+Rendering articles/index
+Completed in 32ms (View: 31, DB: 1) | 200 OK [http://www.example.com/articles]
+  [4;36;1mArticle Create (0.4ms)[0m   [0;1mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 01:17:51', 'Pizza', NULL, '2009-11-08 01:17:51')[0m
+  [4;35;1mArticle Create (0.2ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 01:17:51', 'Breadsticks', NULL, '2009-11-08 01:17:51')[0m
+REQUESTING PAGE: GET /articles with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-07 17:17:51) [GET]
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering articles/index
+Completed in 8ms (View: 5, DB: 1) | 200 OK [http://www.example.com/articles]
+  [4;36;1mArticle Create (0.4ms)[0m   [0;1mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 20:10:45', 'Pizza', NULL, '2009-11-08 20:10:45')[0m
+  [4;35;1mArticle Create (0.1ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 20:10:45', 'Breadsticks', NULL, '2009-11-08 20:10:45')[0m
+REQUESTING PAGE: GET /articles with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-08 12:10:45) [GET]
+  [4;36;1mArticle Load (0.9ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering articles/index
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://www.example.com/articles]
+  [4;36;1mArticle Create (0.4ms)[0m   [0;1mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 20:15:09', 'Pizza', NULL, '2009-11-08 20:15:09')[0m
+  [4;35;1mArticle Create (0.1ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 20:15:09', 'Breadsticks', NULL, '2009-11-08 20:15:09')[0m
+REQUESTING PAGE: GET /articles with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-08 12:15:09) [GET]
+  [4;36;1mArticle Load (0.7ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering articles/index
+Completed in 5ms (View: 2, DB: 1) | 200 OK [http://www.example.com/articles]
+  [4;35;1mArticle Delete all (0.3ms)[0m   [0mDELETE FROM "articles" WHERE 1=1[0m
+REQUESTING PAGE: GET /articles with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-08 12:15:09) [GET]
+  [4;36;1mArticle Load (0.1ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering articles/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.example.com/articles]
+  [4;36;1mArticle Create (0.4ms)[0m   [0;1mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 20:23:37', 'Pizza', NULL, '2009-11-08 20:23:37')[0m
+  [4;35;1mArticle Create (0.1ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 20:23:37', 'Breadsticks', NULL, '2009-11-08 20:23:37')[0m
+REQUESTING PAGE: GET /articles with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-08 12:23:37) [GET]
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering articles/index
+Completed in 5ms (View: 2, DB: 1) | 200 OK [http://www.example.com/articles]
+  [4;35;1mArticle Delete all (0.3ms)[0m   [0mDELETE FROM "articles" WHERE 1=1[0m
+REQUESTING PAGE: GET /articles with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-08 12:23:37) [GET]
+  [4;36;1mArticle Load (0.1ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering articles/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/articles]
+REQUESTING PAGE: GET /articles/new with {} and HTTP headers {"HTTP_REFERER"=>"/articles"}
+
+
+Processing ArticlesController#new (for 127.0.0.1 at 2009-11-08 12:23:37) [GET]
+Rendering articles/new
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://www.example.com/articles/new]
+REQUESTING PAGE: POST /articles with {"article"=>{"title"=>"Spuds", "content"=>"Delicious potato wedges!"}, "commit"=>"Create"} and HTTP headers {"HTTP_REFERER"=>"/articles/new"}
+
+
+Processing ArticlesController#create (for 127.0.0.1 at 2009-11-08 12:23:37) [POST]
+  Parameters: {"article"=>{"title"=>"Spuds", "content"=>"Delicious potato wedges!"}, "commit"=>"Create"}
+  [4;35;1mArticle Create (0.9ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 20:23:37', 'Spuds', 'Delicious potato wedges!', '2009-11-08 20:23:37')[0m
+Redirected to http://www.example.com/articles
+Completed in 187ms (DB: 1) | 302 Found [http://www.example.com/articles]
+REQUESTING PAGE: GET http://www.example.com/articles with {} and HTTP headers {"HTTP_REFERER"=>"/articles"}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-08 12:23:37) [GET]
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering articles/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/articles]
+  [4;36;1mArticle Create (0.4ms)[0m   [0;1mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 20:25:05', 'Pizza', NULL, '2009-11-08 20:25:05')[0m
+  [4;35;1mArticle Create (0.1ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 20:25:05', 'Breadsticks', NULL, '2009-11-08 20:25:05')[0m
+REQUESTING PAGE: GET /articles with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-08 12:25:05) [GET]
+  [4;36;1mArticle Load (0.7ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering articles/index
+Completed in 51ms (View: 48, DB: 1) | 200 OK [http://www.example.com/articles]
+  [4;35;1mArticle Delete all (0.3ms)[0m   [0mDELETE FROM "articles" WHERE 1=1[0m
+REQUESTING PAGE: GET /articles with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-08 12:25:05) [GET]
+  [4;36;1mArticle Load (0.1ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering articles/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/articles]
+REQUESTING PAGE: GET /articles/new with {} and HTTP headers {"HTTP_REFERER"=>"/articles"}
+
+
+Processing ArticlesController#new (for 127.0.0.1 at 2009-11-08 12:25:05) [GET]
+Rendering articles/new
+Completed in 4ms (View: 4, DB: 0) | 200 OK [http://www.example.com/articles/new]
+REQUESTING PAGE: POST /articles with {"article"=>{"title"=>"Spuds", "content"=>"Delicious potato wedges!"}, "commit"=>"Create"} and HTTP headers {"HTTP_REFERER"=>"/articles/new"}
+
+
+Processing ArticlesController#create (for 127.0.0.1 at 2009-11-08 12:25:05) [POST]
+  Parameters: {"article"=>{"title"=>"Spuds", "content"=>"Delicious potato wedges!"}, "commit"=>"Create"}
+  [4;35;1mArticle Create (0.3ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-08 20:25:05', 'Spuds', 'Delicious potato wedges!', '2009-11-08 20:25:05')[0m
+Redirected to http://www.example.com/articles
+Completed in 74ms (DB: 0) | 302 Found [http://www.example.com/articles]
+REQUESTING PAGE: GET http://www.example.com/articles with {} and HTTP headers {"HTTP_REFERER"=>"/articles"}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-08 12:25:05) [GET]
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering articles/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/articles]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "articles" [0m
