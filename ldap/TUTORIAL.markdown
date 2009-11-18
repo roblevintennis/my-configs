@@ -26,20 +26,18 @@ $ sudo port install openldap
 --->  Attempting to fetch openldap-2.3.35.tgz from http://distfiles.macports.org/openldap
 --->  Configuring openldap
 [...]
---->  Building openldap
---->  Staging openldap into destroot
---->  Creating launchd control script
-###########################################################
-# A startup item has been generated that will aid in
-# starting openldap with launchd. It is disabled
-# by default. Execute the following command to start it,
-# and to cause it to launch at startup:
-#
-# sudo launchctl load -w /Library/LaunchDaemons/org.macports.slapd.plist
-###########################################################
---->  Installing openldap @2.3.35_1
---->  Activating openldap @2.3.35_1
---->  Cleaning openldap
+--->  Building openldap  
+--->  Staging openldap into destroot  
+--->  Creating launchd control script  
+
+    A startup item has been generated that will aid in  
+    starting openldap with launchd. It is disabled  
+    by default. Execute the following command to start it,  
+    and to cause it to launch at startup:  
+    sudo launchctl load -w /Library/LaunchDaemons/org.macports.slapd.plist  
+--->  Installing openldap @2.3.35_1  
+--->  Activating openldap @2.3.35_1   
+--->  Cleaning openldap  
 
 *Note that it also installed openssl-0.9.8l and db44 (Berkeley DB) as well.*
 
