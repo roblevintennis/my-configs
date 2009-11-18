@@ -50,28 +50,27 @@ $ which ldapadd
 
 Also in /opt/local/bin:  
 ldapcompare, ldapadd@ -> ldapmodify, ldapdelete, ldapmodify, ldapmodrdn, ldappasswd, ldapsearch, ldapwhoami   
-In fact, a `man -k ldap` includes (much more than) the following:
-ldapcompare(1)           - LDAP compare tool
-ldapdelete(1)            - LDAP delete entry tool
-ldapmodify(1), ldapadd(1) - LDAP modify entry and LDAP add entry tools
-ldapmodrdn(1)            - LDAP rename entry tool
-ldappasswd(1)            - change the password of an LDAP entry
-ldapsearch(1)            - LDAP search tool
-ldapwhoami(1)            - LDAP who am i? tool
-ldif(5)                  - LDAP Data Interchange Format
-slapd(8)                 - Stand-alone LDAP Daemon
-slapd-ldap(5)            - LDAP backend to slapd
-slapd.access(5)          - access configuration for slapd, the stand-alone LDAP daemon
-slapd.conf(5)            - configuration file for slapd, the stand-alone LDAP daemon
-slapd.plugin(5)          - plugin configuration for slapd, the stand-alone LDAP daemon
-slappasswd(8)            - OpenLDAP password utility
-slurpd(8)                - Standalone LDAP Update Replication Daemon
+In fact, a `man -k ldap` includes (much more than) the following:  
+ldapcompare(1)           - LDAP compare tool  
+ldapdelete(1)            - LDAP delete entry tool  
+ldapmodify(1), ldapadd(1) - LDAP modify entry and LDAP add entry tools  
+ldapmodrdn(1)            - LDAP rename entry tool  
+ldappasswd(1)            - change the password of an LDAP entry   
+ldapsearch(1)            - LDAP search tool   
+ldapwhoami(1)            - LDAP who am i? tool  
+ldif(5)                  - LDAP Data Interchange Format  
+slapd(8)                 - Stand-alone LDAP Daemon  
+slapd-ldap(5)            - LDAP backend to slapd  
+slapd.access(5)          - access configuration for slapd, the stand-alone LDAP daemon  
+slapd.conf(5)            - configuration file for slapd, the stand-alone LDAP daemon  
+slapd.plugin(5)          - plugin configuration for slapd, the stand-alone LDAP daemon  
+slappasswd(8)            - OpenLDAP password utility  
+slurpd(8)                - Standalone LDAP Update Replication Daemon  
 
 
 So I see paths that concern me because they BOTH have my slapd.conf, etc., stuff. I guess we'll try to work this out.
 $ l /opt/local/etc/openldap/  
 $ l /etc/openldap/  
-
 
 I find some interesting directions for setting this up on Mac
 <http://www.macgeekery.com/hacks/software/shared_address_book_via_ldap>
@@ -79,58 +78,19 @@ I find some interesting directions for setting this up on Mac
 I also notice that the /etc is aliased to /private/etc on Mac:  
 /etc@ -> private/etc
 
-#### Edit the slapd.conf file  
-
-sudo cp /etc/openldap/slapd.conf.default /etc/openldap/slapd.conf
-
-and then made the following edits:
-
-    database        bdb
-    suffix          "dc=my-domain,dc=com"
-    rootdn          "cn=Manager,dc=my-domain,dc=com"
-    rootpw                                                                       
-    {SSHA}kEdXL/PBatqeAQvKlBbdS4ttHxXX/3sO                                       
-
-
-_Above is sha of one of my typical passwd's ;-)_
-
-###### Launch the daemon   
-sudo launchctl load -w /Library/LaunchDaemons/org.macports.slapd.plist
-sudo launchctl unload -w /Library/LaunchDaemons/org.macports.slapd.plist
-
 ####  slapd.conf 
-#
-# See slapd.conf(5) for details on configuration options.
-# This file should NOT be world readable.
-#
-include                 /opt/local/etc/openldap/schema/core.schema
-include			/opt/local/etc/openldap/schema/cosine.schema
-include                 /opt/local/etc/openldap/schema/inetorgperson.schema
-include                 /opt/local/etc/openldap/schema/nis.schema
-pidfile		/opt/local/var/run/slapd.pid
-argsfile	/opt/local/var/run/slapd.args
+    include                 /opt/local/etc/openldap/schema/core.schema
+    include			/opt/local/etc/openldap/schema/cosine.schema
+    include                 /opt/local/etc/openldap/schema/inetorgperson.schema
+    include                 /opt/local/etc/openldap/schema/nis.schema
+    pidfile		/opt/local/var/run/slapd.pid
+    argsfile	/opt/local/var/run/slapd.args
 
-# Load dynamic backend modules:
-# modulepath	/opt/local/libexec/openldap
-# moduleload	back_bdb.la
-# moduleload	back_ldap.la
-# moduleload	back_ldbm.la
-# moduleload	back_passwd.la
-# moduleload	back_shell.la
-
-# Sample security restrictions
-#	Require integrity protection (prevent hijacking)
-#	Require 112-bit (3DES or better) encryption for updates
-#	Require 63-bit encryption for simple bind
-# security ssf=1 update_ssf=112 simple_bind=64
-
-database	bdb
-suffix		"dc=mycompany,dc=com"
-rootdn		"cn=Manager,dc=mycompany,dc=com"
-rootpw {SSHA}g57gXnL4nkDtutiltL3kIihpLjKGD1VB
-directory	/opt/local/var/openldap-data
-# Indices to maintain
-#index	objectClass	eq
+    database	bdb
+    suffix		"dc=mycompany,dc=com"
+    rootdn		"cn=Manager,dc=mycompany,dc=com"
+    rootpw {SSHA}g57gXnL4nkDtutiltL3kIihpLjKGD1VB
+    directory	/opt/local/var/openldap-data
 
 *Note: the SSHA was obtained by doing: !r slappasswd -s CLEAR_TEXT (and then it for some reason puts it on the next line so I had to put it up by the rootpw*
 
@@ -171,16 +131,31 @@ Something about a system.log error:
 The fix was as simple as:
 
     sudo cp /etc/openldap/slapd.conf.default /etc/openldap/slapd.conf
-
     ldapadd -x -D "cn=Manager,dc=example,dc=com" -W -f /tmp/base.ldif
 
-A dated Ubuntu tut:
-<http://www.installationwiki.org/OpenLDAP>
 
-Image Example -- IGNORE THIS
-We run our *cucumber features/* and get a pass! It looks like this:
-<img src="/roblevintennis/my-configs/raw/master/cucumber/google_webrat_mechanize_google_pass_5.png" />
+_Image Example -- IGNORE THIS_
+    <img src="/roblevintennis/my-configs/raw/master/cucumber/google_webrat_mechanize_google_pass_5.png" />
 
+
+#### Edit the slapd.conf file  
+
+sudo cp /etc/openldap/slapd.conf.default /etc/openldap/slapd.conf
+
+and then made the following edits:
+
+    database        bdb
+    suffix          "dc=my-domain,dc=com"
+    rootdn          "cn=Manager,dc=my-domain,dc=com"
+    rootpw                                                                       
+    {SSHA}kEdXL/PBatqeAQvKlBbdS4ttHxXX/3sO                                       
+
+
+_Above is sha of one of my typical passwd's ;-)_
+
+###### Launch the daemon   
+sudo launchctl load -w /Library/LaunchDaemons/org.macports.slapd.plist
+sudo launchctl unload -w /Library/LaunchDaemons/org.macports.slapd.plist
 
 
 ### Setting up OpenLDAP on OS X Leopard
