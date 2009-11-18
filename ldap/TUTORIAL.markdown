@@ -119,6 +119,7 @@ cn: testuser
 ### ldapadd
     ldapadd -x -D "cn=Manager,dc=mycompany,dc=com" -W -f /tmp/base.ldif
     
+---
 
 #### Troubleshooting Notes
 
