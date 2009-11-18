@@ -119,7 +119,68 @@ cn: testuser
 ### ldapadd
     ldapadd -x -D "cn=Manager,dc=mycompany,dc=com" -W -f /tmp/base.ldif
     
+### Ldap Search
+
+$ ldapsearch -x -b 'dc=mycompany,dc=com' '(objectclass=*)'
+
+     extended LDIF
+
+     LDAPv3
+     base <dc=mycompany,dc=com> with scope subtree
+     filter: (objectclass=*)
+     requesting: ALL
+
+     mycompany.com
+    dn: dc=mycompany,dc=com
+    dc: mycompany
+    objectClass: dcObject
+    objectClass: organization
+    o: My Company Inc.
+
+     bogus, mycompany.com
+    dn: cn=bogus,dc=mycompany,dc=com
+    objectClass: organizationalRole
+    cn: bogus
+
+     testuser, mycompany.com
+    dn: cn=testuser,dc=mycompany,dc=com
+    objectClass: organizationalRole
+    cn: testuser
+
+     search result
+    search: 2
+    result: 0 Success
+
+     numResponses: 4
+     numEntries: 3
+    
+
+*Less Verbose:*  
+    ldapsearch -x -LLL '(objectclass=*)'
+
+###### Search for specific 
+    $ ldapsearch -x -LLL -b 'dc=mycompany,dc=com' '(cn=bogus)'
+
+    dn: cn=bogus,dc=mycompany,dc=com
+    objectClass: organizationalRole
+    cn: bogus
+    
+### Delete
+
+$ ldapdelete -x -W -D 'cn=Manager,dc=mycompany,dc=com' \  
+> 'cn=bogus,dc=mycompany,dc=com'  
+Enter LDAP Password:   
+
+$ ldapsearch -x -LLL -b 'dc=mycompany,dc=com' '(cn=bogus)'
+[Nothing returned because he's deleted!]    
+
 ---
+## phpldapadmin
+TBC
+
+
+---
+
 
 #### Troubleshooting Notes
 
