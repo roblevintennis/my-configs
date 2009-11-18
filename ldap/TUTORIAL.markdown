@@ -167,12 +167,11 @@ $ ldapsearch -x -b 'dc=mycompany,dc=com' '(objectclass=*)'
     
 ### Delete
 
-$ ldapdelete -x -W -D 'cn=Manager,dc=mycompany,dc=com' \  
-> 'cn=bogus,dc=mycompany,dc=com'  
-Enter LDAP Password:   
+    $ ldapdelete -x -W -D 'cn=Manager,dc=mycompany,dc=com' 'cn=bogus,dc=mycompany,dc=com'  
+    Enter LDAP Password:   
 
-$ ldapsearch -x -LLL -b 'dc=mycompany,dc=com' '(cn=bogus)'
-[Nothing returned because he's deleted!]    
+    $ ldapsearch -x -LLL -b 'dc=mycompany,dc=com' '(cn=bogus)'
+    [Nothing returned because he's deleted!]    
 
 ---
 ## phpldapadmin
