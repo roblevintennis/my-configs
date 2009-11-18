@@ -76,6 +76,8 @@ I find some interesting directions for setting this up on Mac
 I also notice that the /etc is aliased to /private/etc on Mac:  
 /etc@ -> private/etc
 
+# THIS WORKED!  
+
 ####  slapd.conf 
     include                 /opt/local/etc/openldap/schema/core.schema
     include			/opt/local/etc/openldap/schema/cosine.schema
