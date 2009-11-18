@@ -128,3 +128,81 @@ Processing ArticlesController#index (for 127.0.0.1 at 2009-11-08 12:25:05) [GET]
 Rendering articles/index
 Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/articles]
   [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "articles" [0m
+  [4;36;1mArticle Create (0.4ms)[0m   [0;1mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-11 04:28:56', 'Pizza', NULL, '2009-11-11 04:28:56')[0m
+  [4;35;1mArticle Create (0.1ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-11 04:28:56', 'Breadsticks', NULL, '2009-11-11 04:28:56')[0m
+REQUESTING PAGE: GET /articles with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-10 20:28:56) [GET]
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering articles/index
+Completed in 170ms (View: 139, DB: 1) | 200 OK [http://www.example.com/articles]
+  [4;35;1mArticle Delete all (0.3ms)[0m   [0mDELETE FROM "articles" WHERE 1=1[0m
+REQUESTING PAGE: GET /articles with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-10 20:28:57) [GET]
+  [4;36;1mArticle Load (0.1ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering articles/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/articles]
+REQUESTING PAGE: GET /articles/new with {} and HTTP headers {"HTTP_REFERER"=>"/articles"}
+
+
+Processing ArticlesController#new (for 127.0.0.1 at 2009-11-10 20:28:57) [GET]
+Rendering articles/new
+Completed in 4ms (View: 4, DB: 0) | 200 OK [http://www.example.com/articles/new]
+REQUESTING PAGE: POST /articles with {"article"=>{"title"=>"Spuds", "content"=>"Delicious potato wedges!"}, "commit"=>"Create"} and HTTP headers {"HTTP_REFERER"=>"/articles/new"}
+
+
+Processing ArticlesController#create (for 127.0.0.1 at 2009-11-10 20:28:57) [POST]
+  Parameters: {"article"=>{"title"=>"Spuds", "content"=>"Delicious potato wedges!"}, "commit"=>"Create"}
+  [4;35;1mArticle Create (0.2ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-11 04:28:57', 'Spuds', 'Delicious potato wedges!', '2009-11-11 04:28:57')[0m
+Redirected to http://www.example.com/articles
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/articles]
+REQUESTING PAGE: GET http://www.example.com/articles with {} and HTTP headers {"HTTP_REFERER"=>"/articles"}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-10 20:28:57) [GET]
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering articles/index
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://www.example.com/articles]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "articles" [0m
+  [4;36;1mArticle Create (0.4ms)[0m   [0;1mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-11 04:40:34', 'Pizza', NULL, '2009-11-11 04:40:34')[0m
+  [4;35;1mArticle Create (0.1ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-11 04:40:34', 'Breadsticks', NULL, '2009-11-11 04:40:34')[0m
+REQUESTING PAGE: GET /articles with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-10 20:40:34) [GET]
+  [4;36;1mArticle Load (0.4ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering articles/index
+Completed in 58ms (View: 55, DB: 1) | 200 OK [http://www.example.com/articles]
+  [4;35;1mArticle Delete all (0.3ms)[0m   [0mDELETE FROM "articles" WHERE 1=1[0m
+REQUESTING PAGE: GET /articles with {} and HTTP headers {}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-10 20:40:34) [GET]
+  [4;36;1mArticle Load (0.1ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering articles/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/articles]
+REQUESTING PAGE: GET /articles/new with {} and HTTP headers {"HTTP_REFERER"=>"/articles"}
+
+
+Processing ArticlesController#new (for 127.0.0.1 at 2009-11-10 20:40:34) [GET]
+Rendering articles/new
+Completed in 4ms (View: 4, DB: 0) | 200 OK [http://www.example.com/articles/new]
+REQUESTING PAGE: POST /articles with {"article"=>{"title"=>"Spuds", "content"=>"Delicious potato wedges!"}, "commit"=>"Create"} and HTTP headers {"HTTP_REFERER"=>"/articles/new"}
+
+
+Processing ArticlesController#create (for 127.0.0.1 at 2009-11-10 20:40:34) [POST]
+  Parameters: {"article"=>{"title"=>"Spuds", "content"=>"Delicious potato wedges!"}, "commit"=>"Create"}
+  [4;35;1mArticle Create (0.2ms)[0m   [0mINSERT INTO "articles" ("updated_at", "title", "content", "created_at") VALUES('2009-11-11 04:40:34', 'Spuds', 'Delicious potato wedges!', '2009-11-11 04:40:34')[0m
+Redirected to http://www.example.com/articles
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/articles]
+REQUESTING PAGE: GET http://www.example.com/articles with {} and HTTP headers {"HTTP_REFERER"=>"/articles"}
+
+
+Processing ArticlesController#index (for 127.0.0.1 at 2009-11-10 20:40:34) [GET]
+  [4;36;1mArticle Load (0.3ms)[0m   [0;1mSELECT * FROM "articles" [0m
+Rendering articles/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/articles]
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "articles" [0m

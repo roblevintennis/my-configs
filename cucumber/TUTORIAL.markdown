@@ -249,6 +249,14 @@ _If you're a nut like me, you catalog select parts of your shell history ;-)_
     cucumber features/manage_users.feature 
 
 ------------
+Seeding Data
+------------
+Put script in db/seeds.rb and then run:
+    rake db:seed RAILS_ENV=test
+    rake db:test:clone
+    cucumber features/
+
+------------
 Jeweler
 ------------
 
