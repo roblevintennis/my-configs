@@ -87,7 +87,6 @@ $ sudo find / -iname slapd.conf
 /opt/local/etc/openldap/slapd.conf    
 /private/etc/openldap/slapd.conf    
 
-####  slapd.conf 
 
     include                 /opt/local/etc/openldap/schema/core.schema
     include		    /opt/local/etc/openldap/schema/cosine.schema
@@ -183,6 +182,88 @@ ldapsearch -x -b 'dc=mycompany,dc=com' '(objectclass=*)'
 
     $ ldapsearch -x -LLL -b 'dc=mycompany,dc=com' '(cn=bogus)'
     [Nothing returned because he's deleted!]    
+
+### Organizational Units
+So we want to create a directory tree with something like:
+
+             company
+	        |
+	    |   |    |
+	    IT  HR   Mkt
+
+So we create an ldif (ldap data interchange format) file:
+dn: ou=IT,dc=mycompany,dc=com
+objectClass: top
+objectClass: organizationalunit
+ou: IT
+description: Information Technologies
+
+dn: ou=HR,dc=mycompany,dc=com
+objectClass: top
+objectClass: organizationalunit
+ou: HR
+description: Human Resources
+
+dn: ou=R&D,dc=mycompany,dc=com
+objectClass: top
+objectClass: organizationalunit
+ou: R&D
+description: Research and Development
+
+dn: ou=Mkt,dc=mycompany,dc=com
+objectClass: top
+objectClass: organizationalunit
+ou: Mkt 
+description: Marketing
+
+_Remember that ldif files cannot have spaces at the end of the file!!!!_    
+
+And issue the following command:    
+    ldapadd -x -D "cn=Manager,dc=mycompany,dc=com" -W -f /tmp/orgs.dif 
+
+
+Then we see what we have:
+
+    $ ldapsearch -x -b 'dc=mycompany,dc=com' '(objectclass=*)'
+    ldapsearch -x -b 'dc=mycompany,dc=com' '(objectclass=*)'
+
+    dn: dc=mycompany,dc=com
+    dc: mycompany
+    objectClass: dcObject
+    objectClass: organization
+    o: My Company Inc.
+
+    dn: cn=testuser,dc=mycompany,dc=com
+    objectClass: organizationalRole
+    cn: testuser
+
+    dn: ou=IT,dc=mycompany,dc=com
+    objectClass: top
+    objectClass: organizationalUnit
+    ou: IT
+    description: Information Technologies
+
+    dn: ou=HR,dc=mycompany,dc=com
+    objectClass: top
+    objectClass: organizationalUnit
+    ou: HR
+    description: Human Resources
+
+    dn: ou=R&D,dc=mycompany,dc=com
+    objectClass: top
+    objectClass: organizationalUnit
+    ou: R&D
+    description: Research and Development
+
+    dn: ou=Mkt,dc=mycompany,dc=com
+    objectClass: top
+    objectClass: organizationalUnit
+    ou:: TWt0IA==
+    description: Marketing
+
+    search: 2
+    result: 0 Success
+
 
 ---
 ## phpldapadmin
