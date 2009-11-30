@@ -331,6 +331,50 @@ _Again, be careful of spaces!_
 Another alternative is to put the changetype: instruction in the ldif file as one of add|delete|modify
 and then I believe we could use ldapmodify to execute all of these commands (or have add delete, etc., all in the same ldif file for the various different entries).
 
+## Ruby net/ldap Gem
+
+Example of auth:    
+
+    require 'rubygems'
+    require 'net/ldap'
+    ldap = Net::LDAP.new
+    ldap.host = localhost
+    ldap.port = 389
+    ldap.auth "Manager", "ur_passwd"
+    if ldap.bind
+      # authentication succeeded
+    else
+      # authentication failed
+    end
+
+Quick Example of a search against an LDAP directory:    
+
+    require 'rubygems'
+    require 'net/ldap'
+
+    ldap = Net::LDAP.new :host => server_ip_address,
+	 :port => 389,
+	 :auth => {
+	       :method => :simple,
+	       :username => "cn=Manager,dc=mycompany,dc=com",
+	       :password => "ur_passwd"
+	 }
+
+    filter = Net::LDAP::Filter.eq( "cn", "replace_with_user*" )
+    treebase = "dc=mycompany,dc=com"
+
+    ldap.search( :base => treebase, :filter => filter ) do |entry|
+      puts "DN: #{entry.dn}"
+      entry.each do |attribute, values|
+	puts "   #{attribute}:"
+	values.each do |value|
+	  puts "      --->#{value}"
+	end
+      end
+    end
+
+    p ldap.get_operation_result
+
 
 ---
 ## phpldapadmin
