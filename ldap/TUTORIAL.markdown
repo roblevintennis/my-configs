@@ -78,13 +78,23 @@ I also notice that the /etc is aliased to /private/etc on Mac:
 
 # THIS WORKED!  
 
+## No Blank Spaces at end!!!!
+<font color="red">This will give errors like:</font>      
+    ldap_add: Invalid syntax (21)
+
+_Find slapd.conf:_    
+$ sudo find / -iname slapd.conf   
+/opt/local/etc/openldap/slapd.conf    
+/private/etc/openldap/slapd.conf    
+
 ####  slapd.conf 
+
     include                 /opt/local/etc/openldap/schema/core.schema
-    include			/opt/local/etc/openldap/schema/cosine.schema
+    include		    /opt/local/etc/openldap/schema/cosine.schema
     include                 /opt/local/etc/openldap/schema/inetorgperson.schema
     include                 /opt/local/etc/openldap/schema/nis.schema
-    pidfile		/opt/local/var/run/slapd.pid
-    argsfile	/opt/local/var/run/slapd.args
+    pidfile		    /opt/local/var/run/slapd.pid
+    argsfile		    /opt/local/var/run/slapd.args
 
     database	bdb
     suffix		"dc=mycompany,dc=com"
@@ -114,14 +124,15 @@ cn: testuser
 
 ### Starting slapd
 
-    sudo /opt/local/libexec/slapd -d -1
+    $ sudo /opt/local/libexec/slapd -d -1    
+    
 
 ### ldapadd
     ldapadd -x -D "cn=Manager,dc=mycompany,dc=com" -W -f /tmp/base.ldif
     
 ### Ldap Search
 
-$ ldapsearch -x -b 'dc=mycompany,dc=com' '(objectclass=*)'
+ldapsearch -x -b 'dc=mycompany,dc=com' '(objectclass=*)'
 
      extended LDIF
 
