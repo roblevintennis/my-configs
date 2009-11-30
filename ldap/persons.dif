@@ -1,0 +1,52 @@
+dn: uid=rlevin, ou=IT, dc=mycompany, dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Rob Levin
+cn: Robin Levin
+sn: Levin
+givenName: Rob Levin
+uid: rlevin
+mail: roblevintennis@gmail.com
+description: Rob Levin in the IT Dept
+
+dn: uid=llevin, ou=HR, dc=mycompany, dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Lynn Levin
+cn: Lynn Guidotti Levin
+sn: Levin
+givenName: Lynn Guidotti
+uid: llevin
+mail: llevin@fake.com
+description: Lynn Levin in the HR Dept
+
+dn: uid=hlevin, ou=R&D, dc=mycompany, dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Hank Levin
+cn: Henry Levin
+cn: Henry Martin Levin
+sn: Levin
+givenName: Henry Martin Levin
+uid: hlevin
+mail: hlevin@fake.com
+description: Hank Levin in the R&D Dept
+
+dn: uid=hilalevin, ou=Mkt, dc=mycompany, dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Hila Levin
+cn: Hila Eden Levin
+sn: Levin
+givenName: Hila EdenLevin
+uid: hilalevin
+mail: hilalevin@fake.com
+description: Hila Levin in the Marketing Dept.

@@ -191,30 +191,31 @@ So we want to create a directory tree with something like:
 	    |   |    |
 	    IT  HR   Mkt
 
-So we create an ldif (ldap data interchange format) file:
-dn: ou=IT,dc=mycompany,dc=com
-objectClass: top
-objectClass: organizationalunit
-ou: IT
-description: Information Technologies
+So we create an ldif (ldap data interchange format) file:    
 
-dn: ou=HR,dc=mycompany,dc=com
-objectClass: top
-objectClass: organizationalunit
-ou: HR
-description: Human Resources
+    dn: ou=IT,dc=mycompany,dc=com
+    objectClass: top
+    objectClass: organizationalunit
+    ou: IT
+    description: Information Technologies
 
-dn: ou=R&D,dc=mycompany,dc=com
-objectClass: top
-objectClass: organizationalunit
-ou: R&D
-description: Research and Development
+    dn: ou=HR,dc=mycompany,dc=com
+    objectClass: top
+    objectClass: organizationalunit
+    ou: HR
+    description: Human Resources
 
-dn: ou=Mkt,dc=mycompany,dc=com
-objectClass: top
-objectClass: organizationalunit
-ou: Mkt 
-description: Marketing
+    dn: ou=R&D,dc=mycompany,dc=com
+    objectClass: top
+    objectClass: organizationalunit
+    ou: R&D
+    description: Research and Development
+
+    dn: ou=Mkt,dc=mycompany,dc=com
+    objectClass: top
+    objectClass: organizationalunit
+    ou: Mkt 
+    description: Marketing
 
 _Remember that ldif files cannot have spaces at the end of the file!!!!_    
 
@@ -263,6 +264,72 @@ Then we see what we have:
 
     search: 2
     result: 0 Success
+
+Note we can also search with the hostname included as follows:    
+     $ ldapsearch -x -h localhost -b 'dc=mycompany,dc=com' '(objectclass=*)'   
+## Adding persons
+
+_Again, be careful of spaces!_
+
+--persons.dif
+
+    dn: uid=rlevin, ou=IT, dc=mycompany, dc=com
+    objectClass: top
+    objectClass: person
+    objectClass: organizationalPerson
+    objectClass: inetOrgPerson
+    cn: Rob Levin
+    cn: Robin Levin
+    sn: Levin
+    givenName: Rob Levin
+    uid: rlevin
+    mail: roblevintennis@gmail.com
+    description: Rob Levin in the IT Dept
+
+    dn: uid=llevin, ou=HR, dc=mycompany, dc=com
+    objectClass: top
+    objectClass: person
+    objectClass: organizationalPerson
+    objectClass: inetOrgPerson
+    cn: Lynn Levin
+    cn: Lynn Guidotti Levin
+    sn: Levin
+    givenName: Lynn Guidotti
+    uid: llevin
+    mail: llevin@fake.com
+    description: Lynn Levin in the HR Dept
+
+    dn: uid=hlevin, ou=R&D, dc=mycompany, dc=com
+    objectClass: top
+    objectClass: person
+    objectClass: organizationalPerson
+    objectClass: inetOrgPerson
+    cn: Hank Levin
+    cn: Henry Levin
+    cn: Henry Martin Levin
+    sn: Levin
+    givenName: Henry Martin Levin
+    uid: hlevin
+    mail: hlevin@fake.com
+    description: Hank Levin in the R&D Dept
+
+    dn: uid=hilalevin, ou=Mkt, dc=mycompany, dc=com
+    objectClass: top
+    objectClass: person
+    objectClass: organizationalPerson
+    objectClass: inetOrgPerson
+    cn: Hila Levin
+    cn: Hila Eden Levin
+    sn: Levin
+    givenName: Hila EdenLevin
+    uid: hilalevin
+    mail: hilalevin@fake.com
+    description: Hila Levin in the Marketing Dept.
+     
+## Change type    
+
+Another alternative is to put the changetype: instruction in the ldif file as one of add|delete|modify
+and then I believe we could use ldapmodify to execute all of these commands (or have add delete, etc., all in the same ldif file for the various different entries).
 
 
 ---

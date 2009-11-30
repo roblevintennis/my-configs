@@ -1,0 +1,23 @@
+dn: ou=IT,dc=mycompany,dc=com
+objectClass: top
+objectClass: organizationalunit
+ou: IT
+description: Information Technologies
+
+dn: ou=HR,dc=mycompany,dc=com
+objectClass: top
+objectClass: organizationalunit
+ou: HR
+description: Human Resources
+
+dn: ou=R&D,dc=mycompany,dc=com
+objectClass: top
+objectClass: organizationalunit
+ou: R&D
+description: Research and Development
+
+dn: ou=Mkt,dc=mycompany,dc=com
+objectClass: top
+objectClass: organizationalunit
+ou: Mkt 
+description: Marketing
