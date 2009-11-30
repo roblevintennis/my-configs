@@ -333,7 +333,7 @@ and then I believe we could use ldapmodify to execute all of these commands (or 
 
 ## Ruby net/ldap Gem
 
-Example of auth:    
+#### Example of auth:      
 
     require 'rubygems'
     require 'net/ldap'
@@ -347,7 +347,7 @@ Example of auth:
       # authentication failed
     end
 
-Quick Example of a search against an LDAP directory:    
+#### Example of a search against an LDAP directory:       
 
     require 'rubygems'
     require 'net/ldap'
@@ -375,6 +375,27 @@ Quick Example of a search against an LDAP directory:
 
     p ldap.get_operation_result
 
+#### Example of adding:    
+
+require 'rubygems'
+require 'net/ldap'
+
+dn = "cn=Charlie Brown, ou=HR, dc=mycompany, dc=com"
+attr = {
+  :cn => "Charlie Brown",
+  :objectclass => ["top", "person", "organizationalPerson", "inetOrgPerson"],
+  :sn => "Brown",
+  :uid => "cbrown",
+  :mail => "cbrown@example.com"
+}
+
+Net::LDAP.open( :host => 'localhost',
+                :port => 389, 
+		:auth => {:method => :simple, :username => 'cn=Manager,dc=mycompany,dc=com', :password => 'PUT_UR_PASSWORD_HERE'} ) do |ldap|
+
+  ldap.add( :dn => dn, :attributes => attr )
+  p ldap.get_operation_result # just debugging - outputs: #<OpenStruct error_message="", code=0, matched_dn="", message="Success">
+end
 
 ---
 ## phpldapadmin
