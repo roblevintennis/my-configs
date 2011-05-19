@@ -41,7 +41,7 @@ map  :!cp -pf % %~:w
 map! mogf function foo() {    var foo;};3kwdwi
 
 " type mogff to get a function skeleton like Mog.foo = function() {...
-map! mogff Mog.foo = function () {};2k2wdwi
+map! mogff Mog.foo = function () {};2k0wli
 
 " type mogif to get an if skeleton
 map! mogif if() {}kllli
