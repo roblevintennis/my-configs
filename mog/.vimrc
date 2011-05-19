@@ -46,6 +46,12 @@ map! mogff Mog.foo = function () {};2k0wli
 " type mogif to get an if skeleton
 map! mogif if() {}kllli
 
+" Macbook version of above:
+"map! <D-8>f foo() {    var foo;};3kwdwi
+"map! <D-8>ff Mog.= function () {};2k0wli
+"map! <D-8>if if() {}kllli
+
+
 function NoAuto() 
   set noautoindent
   set nocindent
