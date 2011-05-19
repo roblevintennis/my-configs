@@ -37,8 +37,22 @@ map  :!cp -pf % %~:w
 " :ab 123 onetwothree
 " :g/^Section/s//As you recall, in^M&/
 
-" type Command-8 then f to get a function skeleton:
-map! <D-8>f function foo() {    var foo;};3kwdwi
+" type mogf to get a function skeleton:
+map! mogf function foo() {    var foo;};3kwdwi
+
+" type mogff to get a function skeleton like Mog.foo = function() {...
+map! mogff Mog.foo = function () {};2k2wdwi
+
+" type mogif to get an if skeleton
+map! mogif if() {}kllli
+
+function NoAuto() 
+  set noautoindent
+  set nocindent
+  set nosmartindent 
+  set indentexpr= 
+endfunction
+:call NoAuto()
 
 
 
