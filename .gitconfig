@@ -1,0 +1,36 @@
+[user]
+	email = rob@mog.com
+	name = Rob Levin
+[core]
+	editor = vim
+	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[color]
+	ui = true
+
+[color "diff"]
+	whitespace = red reverse
+
+[merge]
+	tool = vimdiff
+[alias]
+	rshow = remote show origin
+        last = !"clear;git --no-pager log -1"
+	rlog = reflog --abbrev --decorate
+        sref = show-ref --abbrev
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+        slog = git shortlog -s -n
+	peeps = !git log --pretty=format:%aN | sort | uniq -c | sort -rn
+	ls = ls-files
+        lstat = log --relative --abbrev-commit --date=local --pretty=format:'%C(white)%h %C(cyan)%cr %C(green)by %cn %Creset%n%C(yellow)%cd%n%s' --stat
+
+        lost = !"git fsck | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' --stdin | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
+
+        heads = !"git log origin/master.. --format='%Cred%h%Creset;%C(yellow)%an%Creset;%H;%Cblue%f%Creset' | git name-rev --stdin --always --name-only | column -t -s';'"
+
