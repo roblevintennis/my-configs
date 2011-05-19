@@ -60,6 +60,11 @@ function NoAuto()
 endfunction
 :call NoAuto()
 
+" No tabs in the source file.
+" All tab characters are 4 space characters.
+:set tabstop=4
+:set shiftwidth=4
+:set expandtab
 
 
 
